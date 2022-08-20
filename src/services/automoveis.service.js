@@ -39,7 +39,7 @@ class AutomovelService {
             if(err) {
                 res.status(500).send({ message: `${ err.message } - Failed to register car` })
             } else {
-                res.status(201).send(newCar.toJSON())
+                res.status(201).send(this.listById())
             }
         })
     })

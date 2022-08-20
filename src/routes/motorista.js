@@ -1,5 +1,5 @@
 import express from 'express';
-import MotoristaService from '../services/motoristas.service';
+import MotoristaService from '../services/motoristas.service.js';
 
 const motoristaRoute = express.Router();
 

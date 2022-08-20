@@ -1,10 +1,10 @@
 import express from 'express';
-import AluguelService from '../services/alugueis.service';
+import AluguelService from '../services/alugueis.service.js';
 
 const aluguelRoute = express.Router();
 
 aluguelRoute
-    .get("/aluguel/busca", AluguelService.list)
+    .get("/aluguel/:id", AluguelService.list)
     .post("/aluguel", AluguelService.register)
     .put("/aluguel/:id", AluguelService.update)
 

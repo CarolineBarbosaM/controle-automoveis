@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 const AluguelSherma = new mongoose.Schema(
     {
         id: { type: String },
-        motorista: { type: mongoose.Schema.Types.ObjectId, ref: 'motoristas', required: true },
-        automovel: { type: mongoose.Schema.Types.ObjectId, ref: 'automoveis', required: true },
+        motorista: { type: mongoose.Schema.Types.ObjectId, ref: 'motoristas' },
+        automovel: { type: mongoose.Schema.Types.ObjectId, ref: 'automovel' },
         motivo: { type: String },
-        dt_inicio: { type: Date, required: true },
+        dt_inicio: { type: Date },
         dt_terminio: { type: Date }
     },
     {
