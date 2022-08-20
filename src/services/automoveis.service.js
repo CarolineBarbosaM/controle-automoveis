@@ -1,7 +1,4 @@
 import automovel from '../models/automovel.js';
-
-//tratamento de erros
-
 class AutomovelService {
 
     static listById = ((req, res) => {
@@ -12,9 +9,7 @@ class AutomovelService {
                 (err, automoveis) => {
                     if(err) {
                         res.status(400).send({ message: `${ err.message } - Failed to list car` })
-                    } else if(automoveis == null) {
-                        res.status(201).send({ message: `${ err.message } - Car not found` })
-                    }else {
+                    } else {
                         res.status(200).send(automoveis)
                     }
                 }
@@ -49,9 +44,7 @@ class AutomovelService {
         automovel.findByIdAndUpdate(id, {$set: req.body}, (err) => {
             if(!err) {
                 res.status(200).send({ message: 'Car successfully updated!' })
-            } else if(id == null) {
-                res.status(201).send({ message: `${ err.message } - Car not found` })
-            } else {
+            }  else {
                 res.status(500).send({ message: `${ err.message } - Failed to update car` })
             }
         })

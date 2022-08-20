@@ -1,7 +1,4 @@
 import motorista from '../models/motorista.js'
-
-//tratamento de erros
-
 class MotoristaService {
 
     static listById = ((req, res) => {
@@ -12,9 +9,7 @@ class MotoristaService {
                 (err, motoristas) => {
                     if(err) {
                         res.status(400).send({ message: `${ err.message } - Failed to list Motorist` })
-                    } else if(motoristas == null) {
-                        res.status(201).send({ message: `${ err.message } - Motorist not found` })
-                    }else {
+                    } else {
                         res.status(200).send(motoristas)
                     }
                 }
@@ -49,8 +44,6 @@ class MotoristaService {
         motorista.findByIdAndUpdate(id, {$set: req.body}, (err) => {
             if(!err) {
                 res.status(200).send({ message: 'Motorist successfully updated!' })
-            } else if(id == null) {
-                res.status(201).send({ message: `${ err.message } - Motorist not found` })
             } else {
                 res.status(500).send({ message: `${ err.message } - Failed to update Motorist` })
             }

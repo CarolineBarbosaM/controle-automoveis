@@ -1,6 +1,4 @@
 import aluguel from '../models/aluguel.js';
-
-//tratamento de erros
 class AluguelService {
 
     static list = (req, res) => {
@@ -9,8 +7,12 @@ class AluguelService {
             .populate('motorista', 'nome')
             .populate('automovel')
             .exec((err, alugueis) => {
-                res.status(200).send(alugueis)
-        })
+                if (err) {
+                    res.status(500).send({ message: `${ err.message } - Failed to list register` })
+                } else {
+                    res.status(200).send(alugueis)
+                }
+            })
     }
 
     static register = ((req, res) => {
