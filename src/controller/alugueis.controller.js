@@ -19,7 +19,7 @@ class AluguelController {
         const newRegister = new aluguel(req.body)
         const isRegister = aluguel.find(req.body.motorista)
 
-        if (isRegister) {
+        if (isRegister.dt_terminio == null) {
             res.status(400).send('Motorist has outstanding rent')
         }
 
