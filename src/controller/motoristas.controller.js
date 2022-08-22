@@ -1,5 +1,6 @@
-import motorista from '../models/motorista.js'
-class MotoristaService {
+import motorista from '../models/motorista.js';
+
+class MotoristaController {
 
     static listById = ((req, res) => {
         const id = req.params.id;
@@ -62,4 +63,4 @@ class MotoristaService {
     })
 }
 
-export default MotoristaService;
+export default MotoristaController;

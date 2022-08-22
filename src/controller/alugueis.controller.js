@@ -1,5 +1,5 @@
 import aluguel from '../models/aluguel.js';
-class AluguelService {
+class AluguelController {
 
     static list = (req, res) => {
         const id = req.params.id;
@@ -51,4 +51,4 @@ class AluguelService {
     })
 }
 
-export default AluguelService;
+export default AluguelController;

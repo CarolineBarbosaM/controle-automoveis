@@ -1,13 +1,13 @@
 import express from 'express';
-import AutomovelService from '../services/automoveis.service.js';
+import AutomovelController from '../controller/automoveis.controller.js';
 
 const automovelRoute = express.Router();
 
 automovelRoute
-    .get("/automoveis/busca", AutomovelService.listCar)
-    .get("/automoveis/:id", AutomovelService.listById)
-    .post("/automoveis", AutomovelService.registerCar)
-    .put("/automoveis/:id", AutomovelService.updateCar)
-    .delete("/automoveis/:id", AutomovelService.deleteCar)
+    .get("/automoveis/busca", AutomovelController.listCar)
+    .get("/automoveis/:id", AutomovelController.listById)
+    .post("/automoveis", AutomovelController.registerCar)
+    .put("/automoveis/:id", AutomovelController.updateCar)
+    .delete("/automoveis/:id", AutomovelController.deleteCar)
 
 export default automovelRoute;

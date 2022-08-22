@@ -1,5 +1,6 @@
 import automovel from '../models/automovel.js';
-class AutomovelService {
+
+class AutomovelController {
 
     static listById = ((req, res) => {
         const id = req.params.id;
@@ -19,7 +20,7 @@ class AutomovelService {
     static listCar = ((req, res) => {
         const { cor, marca } = req.query
 
-        automovel.find({'cor': cor}, {'marca': marca}, {}, (err, automoveis) => {
+        automovel.find({'cor': cor, 'marca': marca},  {}, (err, automoveis) => {
             if(!err) {
                 res.status(200).send(automoveis)
             } else {
@@ -62,4 +63,4 @@ class AutomovelService {
     })
 }
 
-export default AutomovelService;
+export default AutomovelController;

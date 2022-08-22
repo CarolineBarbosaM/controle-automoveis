@@ -1,13 +1,13 @@
 import express from 'express';
-import MotoristaService from '../services/motoristas.service.js';
+import MotoristaController from '../controller/motoristas.controller.js';
 
 const motoristaRoute = express.Router();
 
 motoristaRoute
-    .get("/motoristas/busca", MotoristaService.listMotorist)
-    .get("/motoristas/:id", MotoristaService.listById)
-    .post("/motoristas", MotoristaService.registerMotorist)
-    .put("/motoristas/:id", MotoristaService.updateMotorist)
-    .delete("/motoristas/:id", MotoristaService.deleteMotorist)
+    .get("/motoristas/busca", MotoristaController.listMotorist)
+    .get("/motoristas/:id", MotoristaController.listById)
+    .post("/motoristas", MotoristaController.registerMotorist)
+    .put("/motoristas/:id", MotoristaController.updateMotorist)
+    .delete("/motoristas/:id", MotoristaController.deleteMotorist)
 
 export default motoristaRoute;
