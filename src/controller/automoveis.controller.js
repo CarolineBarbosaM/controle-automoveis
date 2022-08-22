@@ -35,7 +35,7 @@ class AutomovelController {
             if(err) {
                 res.status(500).send({ message: `${ err.message } - Failed to register car` })
             } else {
-                res.status(201).send(this.listById())
+                res.status(201).send({ message: 'Car successfully register!' })
             }
         })
     })
